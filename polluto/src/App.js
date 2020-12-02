@@ -2,20 +2,23 @@ import React, { useEffect } from "react";
 import "./App.css";
 import GoogleMapReact from "google-map-react";
 import { usePosition } from "use-position";
+import Footer from "./components/Footer";
 
 function App() {
-	const [data, setData] = useState([]);
+	// const [data, setData] = useState([]);
 
-	useEffect(() => {
-		// fetch from the API
-		// store the result in data via setData()
-	}, []);
+	// useEffect(() => {
+	// 	// fetch from the API
+	// 	// store the result in data via setData()
+	// }, []);
 
 	return (
 		<div>
 			<h1 className="polluto-logo">polluto.</h1>
 
 			<SimpleMap />
+
+			<Footer footerText="⚡️ Built by Rita Correia in ReactJS for General Assembly JSD December 2020 ⚡️" />
 		</div>
 	);
 }
@@ -30,7 +33,11 @@ const SimpleMap = () => {
 	}
 
 	if (!latitude || !longitude) {
-		return <div>Loading...</div>;
+		return (
+			<div>
+				<p className="loading">Loading map...</p>
+			</div>
+		);
 	}
 
 	const center = {
@@ -45,7 +52,7 @@ const SimpleMap = () => {
 					key: "AIzaSyA0ilaCkaAdHbwnSicLrPX9AqRRJZjMWAg",
 				}}
 				defaultCenter={center}
-				defaultZoom={14}
+				defaultZoom={12}
 			>
 				<Marker lat={center.lat} lng={center.lng} text="My Marker" />
 			</GoogleMapReact>
