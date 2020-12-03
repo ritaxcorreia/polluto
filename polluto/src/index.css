@@ -1,9 +1,7 @@
 body {
 	margin: 0;
 	height: 100vh;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-		"Helvetica Neue", sans-serif;
+	font-family: "Inter", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: rgb(2, 0, 36);
@@ -24,20 +22,46 @@ code {
 footer {
 	font-size: 0.75rem;
 	text-align: center;
-	font-family: "Inter", sans-serif;
 	padding: 5px 5px;
 }
 
 .loading {
 	margin: 30%;
-	font-family: "Inter", sans-serif;
 	font-size: 1.5rem;
 	text-align: center;
 }
 
 .polluto-logo {
-	font-family: "Inter", sans-serif;
 	font-size: 3rem;
 	color: white;
 	margin: 16px 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+.card-container {
+	height: 300px;
+	width: 250px;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		90deg,
+		rgb(3, 0, 69) 0%,
+		rgb(2, 6, 74) 20%,
+		rgba(9, 9, 121, 1) 100%
+	);
+	border-radius: 8px;
+}
+
+.card-title {
+	margin: 10px 10px;
+	padding: 10px 5px;
+	font-size: 1rem;
+}
+
+.city-text {
+	margin: 10px 10px;
+	padding: 10px 5px;
+	font-size: 0.8em;
 }
