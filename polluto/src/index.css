@@ -41,8 +41,10 @@ footer {
 	display: none;
 }
 
+/* CARD CONTAINER STYLES */
+
 .card-container {
-	height: 300px;
+	height: 320px;
 	width: 250px;
 	background: rgb(2, 0, 36);
 	background: linear-gradient(
@@ -54,14 +56,43 @@ footer {
 	border-radius: 8px;
 }
 
-.card-title {
-	margin: 10px 10px;
+h2,
+h3,
+p {
+	margin: 10px 10px 1px 10px;
 	padding: 10px 5px;
-	font-size: 1rem;
+	line-height: -2px;
+	text-align: left;
+}
+
+p {
+	font-size: 0.65rem;
+}
+
+.polluto-icon {
+	height: 50px;
+	width: 50px;
+	margin: 8px 1px;
+	padding: 0px 10px 30px 0px;
+	float: left;
 }
 
 .city-text {
-	margin: 10px 10px;
-	padding: 10px 5px;
-	font-size: 0.8em;
+	font-size: 1.3rem;
+}
+
+.line {
+	height: 1px;
+	background-color: white;
+	position: static;
+}
+
+.AQIndex {
+	text-align: center;
+	font-size: 2.6rem;
+	margin-top: -10px;
+}
+
+.main-pollutant {
+	margin-top: 0px;
 }

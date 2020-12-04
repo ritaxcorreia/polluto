@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import GoogleMapReact from "google-map-react";
 import { usePosition } from "use-position";
+import Moment from "react-moment";
+import "moment-timezone";
 import Footer from "./components/Footer";
+import Card from "./components/Card";
 
 function App() {
 	return (
@@ -19,30 +22,16 @@ function App() {
 const SimpleMap = () => {
 	const { latitude, longitude, error } = usePosition();
 
-	console.log(latitude);
-	console.log(longitude);
-
-	const apiUrl = `https://api.airvisual.com/v2/nearest_city?lat=${latitude}&lon=${longitude}&key=4a6dd48a-819d-4f42-943c-e84587a03a4f`;
-
-	// const [showResults, setShowResults] = React.useState(false);
-	// const onChange = () => setShowResults(true);
-
-	let Card;
-
-	// Fetches data from IQAir Air Visual Air Pollution API
-	useEffect(() => {
-		fetch(apiUrl)
-			.then((response) => response.json())
-			.then(function (data) {
-				let city = data.city;
-				let state = data.state;
-				let country = data.country;
-				let { ts, aqius, mainus } = data.current.pollution;
-			})
-			.catch(function (error) {
-				console.log(error);
-			});
-	}, []);
+	const [cardState, setCardState] = useState({
+		lat: null,
+		lng: null,
+		city: "",
+		state: "",
+		country: "",
+		ts: "",
+		aqius: "",
+		mainus: "",
+	});
 
 	if (error !== null) {
 		return <div>Error getting your current location</div>;
@@ -56,18 +45,36 @@ const SimpleMap = () => {
 		);
 	}
 
-	// Finds center by using user's own location coords (lat, lng)
-	const center = {
+	const defaultCenter = {
 		lat: latitude,
 		lng: longitude,
 	};
 
-	Card = ({ title, city, state, country, ts, aqius, mainus }) => (
-		<div className="card-container">
-			<h2 className="card-title">{title}</h2>
-			<h3 className="city-text">{city}</h3>
-		</div>
-	);
+	// This fetches new pollution information on the given latitude and longitude
+	// and updates the card state
+	function fetchPollutionAPI(lat, lng) {
+		fetch(
+			`https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lng}&key=4a6dd48a-819d-4f42-943c-e84587a03a4f`
+		)
+			.then((response) => response.json())
+			.then(function ({ data }) {
+				console.log("data", data);
+
+				setCardState({
+					lat: lat,
+					lng: lng,
+					city: data.city,
+					state: data.state,
+					country: data.country,
+					ts: <Moment>{data.current.pollution.ts}</Moment>,
+					aqius: data.current.pollution.aqius,
+					mainus: data.current.pollution.mainus,
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
 
 	return (
 		<div style={{ height: "90vh", width: "100%" }}>
@@ -75,14 +82,27 @@ const SimpleMap = () => {
 				bootstrapURLKeys={{
 					key: "AIzaSyA0ilaCkaAdHbwnSicLrPX9AqRRJZjMWAg",
 				}}
-				defaultCenter={center}
+				defaultCenter={defaultCenter}
 				defaultZoom={12}
-				onChange={({ center, zoom }) => {
-					console.log(center);
-					console.log(zoom);
+				onChange={({ center }) => {
+					// this onChange is triggered on map load and map pan/zoom
+					fetchPollutionAPI(center.lat, center.lng);
+				}}
+				onClick={({ lat, lng }) => {
+					// this onClick is triggered on map click
+					fetchPollutionAPI(lat, lng);
 				}}
 			>
-				<Card lat={center.lat} lng={center.lng} title="Air Pollution" />
+				<Card
+					lat={cardState.lat}
+					lng={cardState.lng}
+					city={cardState.city}
+					state={cardState.state}
+					country={cardState.country}
+					ts={cardState.ts} //timestamp
+					aqius={cardState.aqius} // air quality index US
+					mainus={cardState.mainus} // main pollutant
+				/>
 			</GoogleMapReact>
 		</div>
 	);
