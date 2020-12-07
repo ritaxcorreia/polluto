@@ -17,22 +17,25 @@
 
 .AQI-box {
 	border-color: white;
-	width: 40%;
-	margin-top: -5px;
+	width: 45%;
 	margin: 0 auto;
-	/* background-color: rgba(168, 223, 95, 0.9); */
 	border-radius: 15px;
 }
 
 .AQIndex {
 	text-align: center;
-	font-size: 2.6rem;
-	margin-top: -5px;
+	font-size: 2.5rem;
 	margin: 0 auto;
 }
 
+.AQtext {
+	text-align: center;
+	font-size: 1rem;
+	margin: -20px 10px;
+}
+
 .main-pollutant {
-	margin-top: 0px;
+	margin-top: 20px;
 }
 
 /* AQI colour classes */
