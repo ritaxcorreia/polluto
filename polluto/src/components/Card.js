@@ -29,18 +29,17 @@ const Card = ({ city, state, country, ts, aqius, mainus }) => {
 
 	return (
 		<div className="card-container">
-			<div>
-				<h3 className="city-text">
-					<img
-						className="polluto-icon"
-						src="../polluto-icon-white.png"
-						alt=""
-					/>
-					{city},
-					<br />
-					{state}, {country}
-				</h3>
-			</div>
+			<h3 className="city-text">
+				<img
+					className="polluto-icon"
+					src="../polluto-icon-white.png"
+					alt=""
+				/>
+				{city},
+				<br />
+				{state}, {country}
+			</h3>
+
 			<div className="line"></div>
 			<div>
 				<h2>Air quality index (US):</h2>

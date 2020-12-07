@@ -27,6 +27,7 @@ const SimpleMap = () => {
 	const [cardState, setCardState] = useState({
 		lat: null,
 		lng: null,
+		position: "absolute",
 		city: "",
 		state: "",
 		country: "",
@@ -36,7 +37,11 @@ const SimpleMap = () => {
 	});
 
 	if (error !== null) {
-		return <div>Error getting your current location</div>;
+		return (
+			<div className="loading">
+				Error getting your current location, please refresh page
+			</div>
+		);
 	}
 
 	if (!latitude || !longitude) {

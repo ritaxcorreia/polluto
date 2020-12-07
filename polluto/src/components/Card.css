@@ -1,3 +1,19 @@
+/* CARD CONTAINER STYLES */
+
+.card-container {
+	height: 350px;
+	width: 250px;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		90deg,
+		rgb(3, 0, 69) 0%,
+		rgb(2, 6, 74) 20%,
+		rgba(9, 9, 121, 1) 100%
+	);
+	border-radius: 8px;
+	margin: -200px;
+}
+
 .polluto-icon {
 	height: 80px;
 	margin: 8px 1px;
@@ -35,7 +51,7 @@
 }
 
 .main-pollutant {
-	margin-top: 20px;
+	margin-top: 25px;
 }
 
 /* AQI colour classes */
