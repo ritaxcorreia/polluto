@@ -62,6 +62,7 @@ footer {
 
 h2,
 h3,
+h4,
 p {
 	margin: 10px 10px 1px 10px;
 	padding: 10px 5px;
@@ -73,65 +74,8 @@ p {
 	font-size: 0.65rem;
 }
 
-.polluto-icon {
-	height: 80px;
-	margin: 8px 1px;
-	padding: 0px 10px 30px 0px;
-	float: left;
-}
-
-.city-text {
-	font-size: 1.3rem;
-}
-
-.line {
-	height: 1px;
-	background-color: white;
-	position: static;
-}
-
-.AQI-box {
-	border-color: white;
-	width: 40%;
-	margin-top: -5px;
-	margin: 0 auto;
-	/* background-color: rgba(168, 223, 95, 0.9); */
-	border-radius: 15px;
-}
-
-.AQIndex {
-	text-align: center;
-	font-size: 2.6rem;
-	margin-top: -5px;
-	margin: 0 auto;
-}
-
-.main-pollutant {
-	margin-top: 0px;
-}
-
-/* AQI colour classes */
-
-.goodAQI {
-	background-color: #a8df5f;
-}
-
-.moderateAQI {
-	background-color: #fdd64b;
-}
-
-.highAQI {
-	background-color: #fe9b57;
-}
-
-.unhealthyAQI {
-	background-color: #fd6a69;
-}
-
-.veryUnhealthyAQI {
-	background-color: #a97bbc;
-}
-
-.hazardousAQI {
-	background-color: #792029;
+h4 {
+	font-size: 0.9rem;
+	padding: 5px 10px;
+	margin-top: -15px;
 }

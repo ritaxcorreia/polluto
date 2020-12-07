@@ -1,28 +1,23 @@
 import React from "react";
+import "./Card.css";
 
 const Card = ({ city, state, country, ts, aqius, mainus }) => {
 	// If Statement here: SWITCH/CASE to define Card background colours depending on AQI US
 	let aqiClassName;
 
-	switch ({ aqiClassName }) {
-		case { aqius } === 0 > 50:
-			aqiClassName = "goodAQI";
-			break;
-		case { aqius } === 51 > 99:
-			aqiClassName = "moderateAQI";
-			break;
-		case { aqius } === 100 > 149:
-			aqiClassName = "highAQI";
-			break;
-		case { aqius } === 150 > 199:
-			aqiClassName = "unhealthyAQI";
-			break;
-		case { aqius } === 200 > 299:
-			aqiClassName = "veryUnhealthyAQI";
-			break;
-		case { aqius } === 300 > 1000:
-			aqiClassName = "hazardousAQI";
-			break;
+	// Conditional AQI background depending on air pollution levels
+	if (aqius <= 50) {
+		aqiClassName = "goodAQI";
+	} else if (aqius < 100) {
+		aqiClassName = "moderateAQI";
+	} else if (aqius < 150) {
+		aqiClassName = "highAQI";
+	} else if (aqius < 200) {
+		aqiClassName = "unhealthyAQI";
+	} else if (aqius < 300) {
+		aqiClassName = "veryUnhealthyAQI";
+	} else {
+		aqiClassName = "hazardousAQI";
 	}
 
 	return (

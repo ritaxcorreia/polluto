@@ -7,11 +7,12 @@ import "moment-timezone";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
 
+// Renders layout
 function App() {
 	return (
 		<div>
 			<h1 className="polluto-logo">polluto.</h1>
-
+			<h4>Your real-time air pollution tracker</h4>
 			<SimpleMap />
 
 			<Footer footerText="⚡️ Built by Rita Correia in ReactJS for General Assembly JSD December 2020 ⚡️" />
@@ -19,6 +20,7 @@ function App() {
 	);
 }
 
+// Renders Map, stores user's coords on pageload (usePosition)
 const SimpleMap = () => {
 	const { latitude, longitude, error } = usePosition();
 
@@ -76,6 +78,7 @@ const SimpleMap = () => {
 			});
 	}
 
+	// Renders Google Map and info card
 	return (
 		<div style={{ height: "90vh", width: "100%" }}>
 			<GoogleMapReact
