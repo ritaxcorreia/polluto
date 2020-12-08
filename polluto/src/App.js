@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import "./App.css";
 import GoogleMapReact from "google-map-react";
 import { usePosition } from "use-position";
-import Moment from "react-moment";
-import "moment-timezone";
+import { format, parseISO } from "date-fns";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
 
@@ -12,7 +10,7 @@ function App() {
 	return (
 		<div>
 			<h1 className="polluto-logo">polluto.</h1>
-			<h4>Your real-time air pollution tracker</h4>
+			<h4 className="tagline">Your real-time air pollution tracker</h4>
 			<SimpleMap />
 
 			<Footer footerText="⚡️ Built by Rita Correia in ReactJS for General Assembly JSD December 2020 ⚡️" />
@@ -67,13 +65,19 @@ const SimpleMap = () => {
 			.then(function ({ data }) {
 				console.log("data", data);
 
+				// turns the timestamp string into a javascript Date
+				const timestamp = parseISO(data.current.pollution.ts);
+
+				// turns the javascript Date into a string that we like (based on the formatting options from date-fns)🥰
+				const formattedTimestamp = format(timestamp, "PPpp");
+
 				setCardState({
 					lat: lat,
 					lng: lng,
 					city: data.city,
 					state: data.state,
 					country: data.country,
-					ts: <Moment>{data.current.pollution.ts}</Moment>,
+					ts: formattedTimestamp,
 					aqius: data.current.pollution.aqius,
 					mainus: data.current.pollution.mainus,
 				});

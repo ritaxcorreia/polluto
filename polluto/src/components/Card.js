@@ -2,7 +2,7 @@ import React from "react";
 import "./Card.css";
 
 const Card = ({ city, state, country, ts, aqius, mainus }) => {
-	// If Statement here: SWITCH/CASE to define Card background colours depending on AQI US
+	// If Statement to define Card background colours depending on AQI US
 	let aqiClassName;
 	let airQualityLevel;
 
@@ -28,29 +28,31 @@ const Card = ({ city, state, country, ts, aqius, mainus }) => {
 	}
 
 	return (
-		<div className="card-container">
-			<h3 className="city-text">
+		<article className="card-container">
+			<header className="card-header">
 				<img
 					className="polluto-icon"
 					src="../polluto-icon-white.png"
 					alt=""
 				/>
-				{city},
-				<br />
-				{state}, {country}
-			</h3>
+				<h3 className="city-text">
+					<div>{city}</div>
+					<div>
+						{state}, {country}
+					</div>
+				</h3>
+			</header>
 
-			<div className="line"></div>
-			<div>
-				<h2>Air quality index (US):</h2>
+			<div className="card-content">
+				<h2 className="AQ-title">Air quality index (US):</h2>
 				<div className={`AQI-box ${aqiClassName}`}>
 					<h3 className="AQIndex">{aqius} </h3>
 					<h4 className="AQtext">{airQualityLevel}</h4>
 				</div>
 				<h2 className="main-pollutant">Main pollutant: {mainus}</h2>
-				<p>Last updated: {ts}</p>
+				<p className="timestamp">Last updated: {ts.toString()}</p>
 			</div>
-		</div>
+		</article>
 	);
 };
 
