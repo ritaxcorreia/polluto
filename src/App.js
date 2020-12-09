@@ -13,7 +13,7 @@ function App() {
 			<h4 className="tagline">Your real-time air pollution tracker</h4>
 			<SimpleMap />
 
-			<Footer footerText="⚡️ Built by Rita Correia in ReactJS for General Assembly JSD December 2020 ⚡️" />
+			<Footer footerText="⚡️ Built by Rita Correia in ReactJS for GA-JSD Dec 2020 ⚡️" />
 		</div>
 	);
 }
@@ -55,6 +55,12 @@ const SimpleMap = () => {
 		lng: longitude,
 	};
 
+	let zoom;
+
+	// if (zoom < {6}) {
+
+	// }
+
 	// This fetches new pollution information on the given latitude and longitude
 	// and updates the card state
 	function fetchPollutionAPI(lat, lng) {
@@ -87,7 +93,7 @@ const SimpleMap = () => {
 			});
 	}
 
-	// Renders Google Map and info card
+	// Renders Google Map and info card (https://github.com/google-map-react/google-map-react/blob/master/API.md)
 	return (
 		<div style={{ height: "90vh", width: "100%" }}>
 			<GoogleMapReact
@@ -96,8 +102,14 @@ const SimpleMap = () => {
 				}}
 				defaultCenter={defaultCenter}
 				defaultZoom={12}
-				onChange={({ center }) => {
+				onChange={({ center, zoom }) => {
 					// this onChange is triggered on map load and map pan/zoom
+					console.log(zoom);
+
+					// if (zoom < 9) {
+					// 	<Card /> = null;
+					// }
+
 					fetchPollutionAPI(center.lat, center.lng);
 				}}
 				onClick={({ lat, lng }) => {
