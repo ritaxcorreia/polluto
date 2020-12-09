@@ -2,7 +2,7 @@ import React from "react";
 import "./Card.css";
 
 const Card = ({ city, state, country, ts, aqius, mainus }) => {
-	// If Statement to define Card background colours depending on AQI US
+	// If Statement, to define Card background colours depending on AQI US
 	let aqiClassName;
 	let airQualityLevel;
 
@@ -27,6 +27,7 @@ const Card = ({ city, state, country, ts, aqius, mainus }) => {
 		airQualityLevel = "Hazardous";
 	}
 
+	// Returns card UI with fetched data
 	return (
 		<article className="card-container">
 			<header className="card-header">
