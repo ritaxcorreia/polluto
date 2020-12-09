@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	height: 100vh;
+	height: 100%;
 	font-family: "Inter", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -23,10 +23,15 @@ code {
 		monospace;
 }
 
-footer {
-	font-size: 0.75rem;
-	text-align: center;
-	padding: 5px 5px;
+.polluto-logo {
+	font-size: 3rem;
+	color: white;
+	margin: 16px 20px;
+}
+
+.tagline {
+	font-size: 0.9rem;
+	margin: 10px 20px 10px 20px;
 }
 
 .loading {
@@ -35,17 +40,22 @@ footer {
 	text-align: center;
 }
 
-.polluto-logo {
-	font-size: 3rem;
-	color: white;
-	margin: 16px 20px;
-}
-
 p {
 	font-size: 0.65rem;
 }
 
-.tagline {
-	font-size: 0.9rem;
-	margin: 10px 20px 10px 20px;
+footer {
+	font-size: 0.75rem;
+	text-align: center;
+	padding: 5px 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: -20px;
+	width: 100%;
+	background: linear-gradient(
+		90deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(9, 9, 121, 1) 36%,
+		rgb(3, 14, 162) 100%
+	);
 }

@@ -5,7 +5,7 @@ import { format, parseISO } from "date-fns";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
 
-// Renders layout
+// Renders app UI
 function App() {
 	return (
 		<div>
@@ -37,7 +37,7 @@ const SimpleMap = () => {
 	if (error !== null) {
 		return (
 			<div className="loading">
-				Error getting your current location, please refresh page
+				Error getting your current location, please reload page
 			</div>
 		);
 	}
