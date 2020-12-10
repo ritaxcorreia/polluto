@@ -1,6 +1,6 @@
 # Polluto
 
-## Polluto a real-time worldwide pollution tracker built in ReactJS, using geolocation, Google Maps API and AirVisual API.
+### Polluto is a real-time worldwide pollution tracker built in ReactJS, using geolocation, Google Maps API and AirVisual API.
 
 This was the final project for my General Assembly course, December 2020.
 
