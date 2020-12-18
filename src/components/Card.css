@@ -8,13 +8,19 @@
 		90deg,
 		rgb(3, 0, 69) 0%,
 		rgb(2, 6, 74) 20%,
-		rgba(9, 9, 121, 1) 100%
+		rgb(2, 13, 133) 100%
 	);
 	border-radius: 8px;
 	transform: translate(
 		-50%,
-		calc(-100% - 10px)
+		calc(-90% - 10px)
 	); /* calc means it will do the math of moving -100% - 10px to accommodate the pointy thing */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	.card-container {
+		transform: translate(-50%, calc(-75% - 10px));
+	}
 }
 
 /* Little triangle pointy thing */
@@ -108,8 +114,4 @@
 
 .hazardousAQI {
 	background-color: #792029;
-}
-
-.hide {
-	display: none;
 }

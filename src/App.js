@@ -13,7 +13,7 @@ function App() {
 			<h4 className="tagline">Your real-time air pollution tracker</h4>
 			<SimpleMap />
 
-			<Footer footerText="⚡️ Built by Rita Correia in ReactJS for GA-JSD Dec 2020 ⚡️" />
+			<Footer footerText="⚡️ Built by Rita Correia in ReactJS, Dec 2020 ⚡️" />
 		</div>
 	);
 }
