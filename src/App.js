@@ -57,10 +57,6 @@ const SimpleMap = () => {
 
 	let zoom;
 
-	// if (zoom < {6}) {
-
-	// }
-
 	// This fetches new pollution information on the given latitude and longitude
 	// and updates the card state
 	function fetchPollutionAPI(lat, lng) {
@@ -93,7 +89,7 @@ const SimpleMap = () => {
 			});
 	}
 
-	// Renders Google Map and info card (https://github.com/google-map-react/google-map-react/blob/master/API.md)
+	// Renders Google Map and data card component (https://github.com/google-map-react/google-map-react/blob/master/API.md)
 	return (
 		<div style={{ height: "90vh", width: "100%" }}>
 			<GoogleMapReact
@@ -102,13 +98,9 @@ const SimpleMap = () => {
 				}}
 				defaultCenter={defaultCenter}
 				defaultZoom={12}
-				onChange={({ center, zoom }) => {
+				onChange={({ center }) => {
 					// this onChange is triggered on map load and map pan/zoom
 					console.log(zoom);
-
-					// if (zoom < 9) {
-					// 	<Card /> = null;
-					// }
 
 					fetchPollutionAPI(center.lat, center.lng);
 				}}
@@ -117,6 +109,11 @@ const SimpleMap = () => {
 					fetchPollutionAPI(lat, lng);
 				}}
 			>
+				{/* const ZoomChanged = ({ zoom }) => {
+		if (zoom < 9) return null;
+	}; */}
+
+				{/* <Card className={this.state.show ? '' : 'hide'} */}
 				<Card
 					lat={cardState.lat}
 					lng={cardState.lng}
