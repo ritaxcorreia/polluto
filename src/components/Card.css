@@ -17,6 +17,31 @@
 	); /* calc means it will do the math of moving -100% - 10px to accommodate the pointy thing */
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 680px) {
+	.card-container {
+		transform: translate(-50%, calc(-100% - 20px));
+		width: 230px;
+	}
+
+	.card-header {
+		display: flex;
+		align-items: center;
+		padding: 50px;
+		border-bottom: 1px solid white;
+	}
+
+	.polluto-icon {
+		height: 50px;
+		margin-right: 5px;
+	}
+
+	.city-text {
+		font-size: 1rem;
+		word-break: break-word;
+		margin: 0;
+	}
+}
+
 /* Little triangle pointy thing */
 .card-container:after {
 	content: "";
