@@ -1,6 +1,6 @@
 # Polluto
 
-### Polluto is a real-time worldwide pollution tracker built in ReactJS, using geolocation, Google Maps API and AirVisual API. Deployed with Heroku.
+### Polluto is a real-time worldwide pollution tracker built in ReactJS, using geolocation, Google Maps API and AirVisual API. Deployed with Netlify.
 
 This was the final project for my General Assembly course, December 2020. And also my first big project in React!
 
@@ -8,7 +8,7 @@ https://polluto.netlify.app/
 
 ![Polluto Screenshot](https://raw.githubusercontent.com/ritaxcorreia/polluto/main/public/screenshot2.png)
 
-N.B.: The Polluto app can only take 5 API calls per minute, so pace yourself! 🙃
+N.B.: The free plan on AirVisual API caps at 5 API calls per minute, so pace yourself! If you notice the pollution card not showing, that will be why. Wait a bit and it will show again 🙃
 
 ## Upcoming features:
 
