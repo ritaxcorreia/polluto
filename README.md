@@ -6,7 +6,7 @@ This was the final project for my General Assembly course, December 2020. And al
 
 https://polluto.netlify.app/
 
-[Polluto Screenshot](https://raw.githubusercontent.com/ritaxcorreia/polluto/main/public/screenshot2.png)
+![Polluto Screenshot](https://raw.githubusercontent.com/ritaxcorreia/polluto/main/public/screenshot2.png)
 
 N.B.: The Polluto app can only take 5 API calls per minute, so pace yourself! 🙃
 
