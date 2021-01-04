@@ -4,15 +4,14 @@ import { usePosition } from "use-position";
 import { format, parseISO } from "date-fns";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
+import Header from "./components/Header";
 
 // Renders app UI
 function App() {
 	return (
 		<div>
-			<h1 className="polluto-logo">polluto.</h1>
-			<h4 className="tagline">Your real-time air pollution tracker</h4>
+			<Header taglineText="Your real-time air pollution tracker" />
 			<SimpleMap />
-
 			{/* <Footer footerText="⚡️ Built by Rita Correia in ReactJS, Dec 2020 ⚡️" /> */}
 		</div>
 	);
