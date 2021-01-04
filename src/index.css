@@ -44,7 +44,7 @@ p {
 	font-size: 0.65rem;
 }
 
-footer {
+/* footer {
 	font-size: 0.75rem;
 	text-align: center;
 	padding: 5px 5px;
@@ -58,7 +58,7 @@ footer {
 		rgba(9, 9, 121, 1) 36%,
 		rgb(3, 14, 162) 100%
 	);
-}
+} */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	.polluto-logo {
